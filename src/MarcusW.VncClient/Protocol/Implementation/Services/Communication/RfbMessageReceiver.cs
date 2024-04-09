@@ -1,8 +1,11 @@
 using System;
+using System.Buffers;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,7 +57,7 @@ namespace MarcusW.VncClient.Protocol.Implementation.Services.Communication
 
         // This method will not catch exceptions so the BackgroundThread base class will receive them,
         // raise a "Failure" and trigger a reconnect.
-        protected override void ThreadWorker(CancellationToken cancellationToken)
+        protected override async Task ThreadWorker(CancellationToken cancellationToken)
         {
             // Get the transport stream so we don't have to call the getter every time
             Debug.Assert(_context.Transport != null, "_context.Transport != null");
@@ -65,28 +68,34 @@ namespace MarcusW.VncClient.Protocol.Implementation.Services.Communication
             ImmutableDictionary<byte, IIncomingMessageType> incomingMessageLookup =
                 _context.SupportedMessageTypes.OfType<IIncomingMessageType>().ToImmutableDictionary(mt => mt.Id);
 
-            Span<byte> messageTypeBuffer = stackalloc byte[1];
-
-            while (!cancellationToken.IsCancellationRequested)
+            var messageTypeBuffer = MemoryPool<byte>.Shared.Rent();
+            try
             {
-                // Read message type
-                if (transportStream.Read(messageTypeBuffer) == 0)
-                    throw new UnexpectedEndOfStreamException("Stream reached its end while reading next message type.");
-                byte messageTypeId = messageTypeBuffer[0];
+                while (!cancellationToken.IsCancellationRequested)
+                {
+                    // Read message type
+                    if (await transportStream.ReadAsync(messageTypeBuffer.Memory).ConfigureAwait(false) == 0)
+                        throw new UnexpectedEndOfStreamException("Stream reached its end while reading next message type.");
+                    byte messageTypeId = messageTypeBuffer.Memory.Span[0];
 
-                // Find message type
-                if (!incomingMessageLookup.TryGetValue(messageTypeId, out IIncomingMessageType messageType))
-                    throw new UnexpectedDataException($"Server sent a message of type {messageTypeId} that is not supported by this protocol implementation. "
-                        + "Servers should always check for client support before using protocol extensions.");
+                    // Find message type
+                    if (!incomingMessageLookup.TryGetValue(messageTypeId, out IIncomingMessageType messageType))
+                        throw new UnexpectedDataException($"Server sent a message of type {messageTypeId} that is not supported by this protocol implementation. "
+                            + "Servers should always check for client support before using protocol extensions.");
 
-                _logger.LogDebug("Received message: {name}({id})", messageType.Name, messageTypeId);
+                    _logger.LogDebug("Received message: {name}({id})", messageType.Name, messageTypeId);
 
-                // Ensure the message type is marked as used
-                if (!messageType.IsStandardMessageType)
-                    _state.EnsureMessageTypeIsMarkedAsUsed(messageType);
+                    // Ensure the message type is marked as used
+                    if (!messageType.IsStandardMessageType)
+                        _state.EnsureMessageTypeIsMarkedAsUsed(messageType);
 
-                // Read the message
-                messageType.ReadMessage(transport, cancellationToken);
+                    // Read the message
+                    messageType.ReadMessage(transport, cancellationToken);
+                }
+            }
+            finally
+            {
+                messageTypeBuffer.Dispose();
             }
         }
     }
