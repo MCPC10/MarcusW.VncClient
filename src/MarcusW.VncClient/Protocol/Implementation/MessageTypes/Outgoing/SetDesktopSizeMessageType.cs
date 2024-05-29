@@ -3,7 +3,6 @@ using System.Buffers.Binary;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Threading;
-using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Protocol.MessageTypes;
 
 namespace MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing

@@ -2,7 +2,6 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MarcusW.VncClient.Protocol;
-using MarcusW.VncClient.Protocol.Implementation.SecurityTypes;
 using MarcusW.VncClient.Protocol.Services;
 using MarcusW.VncClient.Utils;
 using Microsoft.Extensions.Logging.Abstractions;

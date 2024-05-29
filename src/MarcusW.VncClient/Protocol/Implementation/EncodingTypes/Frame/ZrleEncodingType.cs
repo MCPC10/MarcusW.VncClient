@@ -3,7 +3,6 @@ using System.Buffers.Binary;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Rendering;
 

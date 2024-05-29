@@ -3,13 +3,10 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing;
 using MarcusW.VncClient.Protocol.MessageTypes;
 using MarcusW.VncClient.Protocol.Services;
-using MarcusW.VncClient.Rendering;
 using MarcusW.VncClient.Utils;
 using Microsoft.Extensions.Logging;
 

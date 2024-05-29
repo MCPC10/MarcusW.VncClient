@@ -1,6 +1,5 @@
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -54,13 +53,13 @@ namespace AvaloniaVncClient.Views
 
         private void OnEnableFullscreenButtonClicked(object? sender, RoutedEventArgs e) => SetFullscreenMode(true);
 
-        private void SetFullscreenMode(bool fullscreen)
-        {
-            WindowState = fullscreen ? WindowState.FullScreen : WindowState.Normal;
+       private void SetFullscreenMode(bool fullscreen)
+            {
+                WindowState = fullscreen ? WindowState.FullScreen : WindowState.Normal;
 
-            TopDockPanel.IsVisible = !fullscreen;
-            BottomDockPanel.IsVisible = !fullscreen;
-            RightDockPanel.IsVisible = !fullscreen;
-        }
+                TopDockPanel.IsVisible = !fullscreen;
+                BottomDockPanel.IsVisible = !fullscreen;
+                RightDockPanel.IsVisible = !fullscreen;
+            }
     }
 }

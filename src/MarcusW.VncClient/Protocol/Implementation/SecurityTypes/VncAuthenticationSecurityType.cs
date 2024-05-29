@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
@@ -7,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MarcusW.VncClient.Protocol.SecurityTypes;
 using MarcusW.VncClient.Security;
-using MarcusW.VncClient.Utils;
 
 namespace MarcusW.VncClient.Protocol.Implementation.SecurityTypes
 {

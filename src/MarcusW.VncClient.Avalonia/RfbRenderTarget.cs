@@ -6,11 +6,9 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Threading;
-using MarcusW.VncClient.Avalonia.Adapters;
 using MarcusW.VncClient.Avalonia.Adapters.Rendering;
 using MarcusW.VncClient.Rendering;
 using IRenderTarget = MarcusW.VncClient.Rendering.IRenderTarget;
-using PixelFormat = Avalonia.Platform.PixelFormat;
 
 namespace MarcusW.VncClient.Avalonia
 {

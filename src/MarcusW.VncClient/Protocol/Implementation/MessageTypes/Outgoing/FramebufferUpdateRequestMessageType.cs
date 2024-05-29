@@ -2,7 +2,6 @@ using System;
 using System.Buffers.Binary;
 using System.Diagnostics;
 using System.Threading;
-using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Incoming;
 using MarcusW.VncClient.Protocol.MessageTypes;
 
 namespace MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing

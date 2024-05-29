@@ -1,12 +1,9 @@
 using System;
 using System.Buffers.Binary;
-using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using MarcusW.VncClient.Protocol.EncodingTypes;
-using MarcusW.VncClient.Protocol.Implementation.EncodingTypes.Pseudo;
 using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing;
 using MarcusW.VncClient.Protocol.MessageTypes;
 using MarcusW.VncClient.Protocol.Services;

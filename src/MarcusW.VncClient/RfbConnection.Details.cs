@@ -3,7 +3,6 @@ using MarcusW.VncClient.Protocol;
 using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Protocol.MessageTypes;
 using MarcusW.VncClient.Protocol.SecurityTypes;
-using MarcusW.VncClient.Rendering;
 
 namespace MarcusW.VncClient
 {

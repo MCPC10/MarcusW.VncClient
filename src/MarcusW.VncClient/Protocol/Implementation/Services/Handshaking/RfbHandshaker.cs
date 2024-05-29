@@ -8,7 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MarcusW.VncClient.Protocol.SecurityTypes;
 using MarcusW.VncClient.Protocol.Services;
-using MarcusW.VncClient.Utils;
 using Microsoft.Extensions.Logging;
 
 namespace MarcusW.VncClient.Protocol.Implementation.Services.Handshaking

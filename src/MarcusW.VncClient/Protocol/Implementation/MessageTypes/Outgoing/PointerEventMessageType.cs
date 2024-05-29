@@ -1,6 +1,5 @@
 using System;
 using System.Buffers.Binary;
-using System.Diagnostics;
 using System.Threading;
 using MarcusW.VncClient.Protocol.MessageTypes;
 

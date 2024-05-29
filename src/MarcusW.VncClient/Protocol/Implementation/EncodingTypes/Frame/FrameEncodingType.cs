@@ -1,4 +1,3 @@
-using System.Buffers.Binary;
 using System.IO;
 using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Rendering;

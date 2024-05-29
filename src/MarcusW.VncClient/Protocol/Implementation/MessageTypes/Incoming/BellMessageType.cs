@@ -1,6 +1,5 @@
 using System;
 using System.Threading;
-using MarcusW.VncClient.Output;
 using MarcusW.VncClient.Protocol.MessageTypes;
 using Microsoft.Extensions.Logging;
 

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
 using MarcusW.VncClient.Output;
 using MarcusW.VncClient.Rendering;
 using MarcusW.VncClient.Security;

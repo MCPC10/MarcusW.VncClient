@@ -2,7 +2,6 @@ using System;
 using System.Buffers.Binary;
 using System.Diagnostics;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
 using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Rendering;

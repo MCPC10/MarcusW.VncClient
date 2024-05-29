@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MarcusW.VncClient;
 using MarcusW.VncClient.Avalonia.Adapters.Logging;
-using MarcusW.VncClient.Rendering;
 using Microsoft.Extensions.Logging;
 using Splat;
 

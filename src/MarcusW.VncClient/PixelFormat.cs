@@ -1,9 +1,5 @@
 using System;
-using System.Buffers.Binary;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using MarcusW.VncClient.Protocol;
-using MarcusW.VncClient.Rendering;
 
 namespace MarcusW.VncClient
 {

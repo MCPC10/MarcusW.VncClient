@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Immutable;
-using System.Diagnostics;
-using System.Linq;
 using MarcusW.VncClient.Protocol.EncodingTypes;
 using MarcusW.VncClient.Protocol.MessageTypes;
 using MarcusW.VncClient.Protocol.SecurityTypes;
 using MarcusW.VncClient.Protocol.Services;
-using MarcusW.VncClient.Rendering;
 
 namespace MarcusW.VncClient.Protocol
 {

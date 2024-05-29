@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Reactive.Subjects;
 using Avalonia;
 using Avalonia.Controls;
 using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing;

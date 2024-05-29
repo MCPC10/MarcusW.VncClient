@@ -3,7 +3,6 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using MarcusW.VncClient.Protocol.EncodingTypes;
-using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Incoming;
 using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing;
 using Microsoft.Extensions.Logging;
 
