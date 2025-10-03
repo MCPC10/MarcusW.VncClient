@@ -99,7 +99,7 @@ namespace MarcusW.VncClient.Avalonia
 
             // Has any bitmap been rendered yet?
             if (!bitmapSize.HasValue)
-                return global::Avalonia.Size.Empty;
+                return default;
 
             // Request the size of the current bitmap
             return bitmapSize.Value;

@@ -113,7 +113,7 @@ namespace MarcusW.VncClient.Avalonia
 
             Dispatcher.UIThread.Post(async () => {
                 // Copy the text to the local clipboard
-                await Application.Current.Clipboard.SetTextAsync(text).ConfigureAwait(true);
+                await Clipboard.Get().SetTextAsync(text).ConfigureAwait(true);
             });
         }
     }
