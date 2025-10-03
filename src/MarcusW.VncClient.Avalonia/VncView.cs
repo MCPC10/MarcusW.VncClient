@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Threading;
 using MarcusW.VncClient.Output;
+using MarcusW.VncClient.Protocol.Implementation.MessageTypes.Outgoing;
 
 namespace MarcusW.VncClient.Avalonia
 {
