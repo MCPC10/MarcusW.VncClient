@@ -87,7 +87,7 @@ namespace MarcusW.VncClient.Avalonia
             get => _viewOnly;
             set
             {
-                _viewOnly = value;
+                SetAndRaise(ViewOnlyProperty, ref _viewOnly, value);
                 if (_viewOnly)
                     ResetKeyPresses();
             }
